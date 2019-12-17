@@ -1,0 +1,34 @@
+= render partial: "shared/header-before-login"
+
+.wrapper
+  .contents
+    .main-contents3
+      .new-review
+        .new-review__title
+          %label.new-review__title--label レビュータイトル
+          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
+        .new-review__brand
+          %label.new-review__title--label ブランド
+          = text_field :title, class: "new-review__title--label--textarea"
+        .review__content
+        %ul.review__image--thumbnails
+          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl"), class: "review__image--2"
+          %label.new-review__title--label 画像のコメント
+          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
+          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_1"), class: "review__image--2"
+          %label.new-review__title--label 画像のコメント
+          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
+          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_2"), class: "review__image--2"
+          %label.new-review__title--label 画像のコメント
+          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
+        %ul.review__image--thumbnails
+          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_4"), class: "review__image--2"
+          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
+          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_5"), class: "review__image--2"
+          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
+          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_6"), class: "review__image--2"
+          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
+        .new-review__submit
+          レビューを投稿する
+
+  = render partial: "shared/footer"

@@ -1,0 +1,33 @@
+.contents {
+  background: #3e464b; 
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto ;
+  max-width: 1200px;
+}
+.main-contents3{
+  background: rgb(217, 225, 225); 
+  margin: auto ;
+  width: 100%;
+}
+
+.new-review {
+  margin: 10px;
+  background: #454e54;
+  border-radius: 5px;
+&__title {
+  height: 70px;
+  width: 343px;
+  margin: 0px auto 0;
+}
+}
+
+.new-review__submit {
+  height: 100px;
+  width: 200px;
+  background: royalblue;
+  color: aliceblue;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 5px;
+}

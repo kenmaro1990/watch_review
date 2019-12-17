@@ -1,0 +1,17 @@
+= render partial: "shared/header-before-login"
+
+.wrapper
+  .contents
+    .main-contents
+      .review-list
+        .review-list__title
+          90年代を代表するIWCの名作パイロットウォッチ マーク12
+        =image_tag ("http://postoveralls.com/wp/wp-content/uploads/2019/12/1-1-1024x768.jpg"), class: "review-list__image--main"
+        .review-list__content
+          ここにレビューが入ります。ここにレビューが入ります。ここにレビューが入ります。ここにレビューが入ります。レビューが入ります。ここにレビューが入ります。ここにレビューが入ります。ここにレビューが入ります。ここにレビューが入ります。ここにレビューが入ります。ここにレビューが入ります
+          .review-list__read-more
+            read more
+          .review-list__author
+            reviewed by @user
+    = render partial: "shared/side-menu"
+  = render partial: "shared/footer"
