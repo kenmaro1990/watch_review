@@ -81,7 +81,7 @@
   flex: 1 0 375px;
 }
 
-.review-list {
+.review {
   margin: 10px;
   background: #454e54;
   border-radius: 5px;
@@ -103,9 +103,8 @@
     min-width: 400px;
     margin: auto;
   }
-  &__read-more {
-  }
   &__author {
+    float: right;
    }
 
 }
