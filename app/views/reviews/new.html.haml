@@ -3,32 +3,21 @@
 .wrapper
   .contents
     .main-contents3
-      .new-review
-        .new-review__title
-          %label.new-review__title--label レビュータイトル
-          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
-        .new-review__brand
-          %label.new-review__title--label ブランド
-          = text_field :title, class: "new-review__title--label--textarea"
-        .review__content
-        %ul.review__image--thumbnails
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl"), class: "review__image--2"
-          %label.new-review__title--label 画像のコメント
-          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_1"), class: "review__image--2"
-          %label.new-review__title--label 画像のコメント
-          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_2"), class: "review__image--2"
-          %label.new-review__title--label 画像のコメント
-          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
-        %ul.review__image--thumbnails
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_4"), class: "review__image--2"
-          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_5"), class: "review__image--2"
-          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_6"), class: "review__image--2"
-          = text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
-        .new-review__submit
-          レビューを投稿する
+      = form_for @review do |f|
+        .new-review
+          .new-review__title
+            %label.new-review__title--label レビュータイトル
+            = f.text_field :title, placeholder: 'タイトル', class: "new-review__title--label--textarea"
+          .new-review__brand
+            %label.new-review__title--label ブランド(該当しない場合は"---")
+            = f.collection_select :brand_id, @brands, :id, :brand_name, {prompt: "---"}, class: "select-default", id: "parent_category"
+          .review__contents
+          = f.fields_for :review_images do |r|
+            %ul.review__image--thumbnails
+              = r.file_field :image, multiple: true, name: 'review_images[image][]'
+              = r.text_field :description, placeholder: '写真の説明', class: "new-review__title--label"
+
+          = f.submit "レビューを投稿する", class: "new-review__submit"
+
 
   = render partial: "shared/footer"

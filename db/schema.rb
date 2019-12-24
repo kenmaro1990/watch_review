@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_124507) do
+ActiveRecord::Schema.define(version: 2019_12_19_022243) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brand_name", null: false
@@ -19,9 +19,23 @@ ActiveRecord::Schema.define(version: 2019_12_17_124507) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "review_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "review_id"
+    t.string "image"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_review_images_on_review_id"
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "brand_id"
+    t.string "title", null: false
+    t.index ["brand_id"], name: "index_reviews_on_brand_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -37,4 +51,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_124507) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "review_images", "reviews"
+  add_foreign_key "reviews", "brands"
+  add_foreign_key "reviews", "users"
 end
