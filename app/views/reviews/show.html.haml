@@ -5,17 +5,12 @@
     .main-contents2
       .review
         .review__title
-          90年代を代表するIWCの名作パイロットウォッチ マーク12
+          = @review.title
     
-        =image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl"), class: "review__image--1"
+        =image_tag @image.image_url, class: "review__image--1"
         %ul.review__image--thumbnails
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl"), class: "review__image--2"
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_1"), class: "review__image--2"
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_2"), class: "review__image--2"
-        %ul.review__image--thumbnails
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_4"), class: "review__image--2"
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_5"), class: "review__image--2"
-          %li=image_tag ("https://item-shopping.c.yimg.jp/i/n/googoods_cvz0005gbl_6"), class: "review__image--2"
+          -@images.each_with_index do |image, index|
+            %li=image_tag image.image_url, {class: "review__image--2"}
         .review__image--comment
           ここに画像コメントが入ります
           ここに画像コメントが入ります
@@ -30,7 +25,8 @@
           ここに画像コメントが入ります
           ここに画像コメントが入ります
         .review__author
-          reviewed by @user
+          Posted by
+          =@review.user.name
     .side-menu
       .ranking
         人気の記事

@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
     @review = Review.new  
     @review.review_images.build
     @brands = Brand.all
-
   end
 
   def create
@@ -20,14 +19,18 @@ class ReviewsController < ApplicationController
         @review.review_images.create(image: image, review_id: @review.id)
       end    
       redirect_to root_path
-
     else
       render action: "new"
-    end
-    
+    end  
   end
 
   def show
+    @review = Review.find(params[:id])
+    @images = @review.review_images
+    @image = @images.first
+  end
+
+  def detail
   end
 end
 
