@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @reviews = Review.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -28,6 +29,8 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @images = @review.review_images
     @image = @images.first
+    @comment = Comment.new
+    @comments = @review.comments.includes(:user)
   end
 
   def detail

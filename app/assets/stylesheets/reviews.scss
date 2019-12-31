@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+*{
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
 .header{
   height: 80px;
   background: #454e54;
@@ -9,16 +14,23 @@
   width: 100%;
   &__title {
     float: left;
+    font-size: 2em;
+    position: relative;
+    top:20px;
+    left: 20px;
+    text-decoration: none;
+    color: white;
   }
   &__login {
     cursor: pointer;
     float: right;
-    height: 20px;
+    height: 30px;
     margin: 25px 100px 25px 10px;
-    background: #4aa7e6;
+    background: #303335;
     border-radius: 5px;
-    line-height: 20px;
     padding: 5px;
+    text-decoration: none;
+    color: white;
   }
   &__new-review {
     cursor: pointer;
@@ -28,7 +40,7 @@
     background: #4aa7e6;
     border-radius: 5px;
     line-height: 30px;
-
+    color: white;
   }
   &__search {
     float: left;
@@ -72,11 +84,72 @@
   flex-wrap: wrap;
   margin: auto ;
   max-width: 1200px;
-
-
+  max-width: 100%;
 }
 .main-contents{
-  height: 1800px;
+  background: rgb(217, 225, 225); 
+  flex: 1 0 375px;
+}
+
+.side-menu{
+  background: rgb(217, 225, 225); 
+}
+
+.ranking{
+  border-radius: 5px;
+  background: rgb(255, 255, 255); 
+  padding: 5px;
+&__header{
+  font-weight: bold;
+}
+&__title{
+  margin: 5px 0px 0px 0px;
+}
+}
+
+.brands{
+  border-radius: 5px;
+  background: rgb(255, 255, 255); 
+  padding: 5px;
+  margin: 10px 0 0 0;
+  &__header{
+    font-weight: bold;
+  }
+  &__famous-brand{
+    margin: 5px 0px 0px 0px;
+    & a {
+      color: #121111;
+      text-decoration: none;
+
+    }
+  }
+}
+
+.footer {
+  height: 80px;
+  color: white;
+  background: #2d2d2d; 
+  text-align: center;
+  line-height: 80px;
+}
+
+.fa-clock {
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+
+.fa-rotate-45 {
+	transform: rotate(45deg);
+}
+
+.main-contents2{
   background: rgb(217, 225, 225); 
   flex: 1 0 375px;
 }
@@ -85,39 +158,87 @@
   margin: 10px;
   background: #454e54;
   border-radius: 5px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   &__title {
     font-size: 2rem;
+    width:100%;
+    color: #ffffff;
+    text-decoration: none;
+
   }
-  &__image--main {
-    height: 200px;
-    width: 200px;
-    margin: 0 5px;
+  &__image--2 {
+    height: 100px;
+    width: 100px;
+    margin: 10px 5px 0px 30px;
+    display: inline-block;
+  }
+  &__image--3 {
+    height: 100px;
+    width: 100px;
+    margin: 5px 5px 0px 30px;
+    display: inline-block;
+  }
+  &__image--4 {
+    height: 100px;
+    width: 100px;
+    margin: 5px 5px 0px 30px;
+    display: inline-block;
+  }
+  &__image--5 {
+    height: 70px;
+    width: 70px;
+    margin: 5px 5px 0px 30px;
+    display: inline-block;
+  }
+  &__image--6 {
+    height: 70px;
+    width: 70px;
+    margin: 5px 5px 0px 30px;
+    display: inline-block;
+  }
+  &__image--7 {
+    height: 70px;
+    width: 70px;
+    margin: 5px 5px 0px 30px;
+    display: inline-block;
   }
   &__content {
     background: #2d2d2d;
-    height: 150px;
     width: 100%;
     flex: 1 0 400px;
     min-width: 400px;
     margin: auto;
   }
-  &__author {
-    float: right;
+  &__bottom {
+   &--author {
+    display: block;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
    }
+   &--author-icon{
+    float: left;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
 
+   }
+   &--comment{
+    display: inline-block;
+   }
+  }
+  
 }
 
-.side-menu{
-  width: 300px;
-  background: rgb(217, 225, 225); 
+.fa-thumbs-up {
+  height: 32px;
+  width: 32px;
+  font-size: 300px;
+  color: red;
+  display: block;
+  float: left;
+  line-height: 32px;
 }
-
-.footer {
-  height: 80px;
-  color: white;
-  background: #2d2d2d; 
-  text-align: center;
-  line-height: 80px
-;}

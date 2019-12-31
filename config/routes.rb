@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "reviews#index"
   resources :reviews do
-    collection do
-      get 'detail'
-    end
+    resources :comments, only: [:create]
+  end
+
+  resources :brands, only: [:show, :index] do
   end
 
 end

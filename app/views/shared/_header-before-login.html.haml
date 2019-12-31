@@ -1,10 +1,12 @@
 .header
-  .header__title
-    watch_review
+  = link_to root_path, class: "header__title" do
+    Watch 
+    %i.fa.fa-clock-o.fa-rotate-45
+    Review
   = link_to destroy_user_session_path, method: :delete, class: 'header__login' do
-    ログイン
+    Log in
   = link_to destroy_user_session_path, method: :delete, class: 'header__login' do
-    ログアウト
+    Log out
   -# = link_to new_reviews_path, class: 'header__new-review' do
     レビューを投稿する
   %a.header__drawer

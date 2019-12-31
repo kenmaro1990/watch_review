@@ -15,8 +15,5 @@
           = f.fields_for :review_images do |r|
             %ul.review__image--thumbnails
               = r.file_field :image, multiple: true, name: 'review_images[image][]'
-
           = f.submit "レビューを投稿する", class: "new-review__submit"
-
-
   = render partial: "shared/footer"

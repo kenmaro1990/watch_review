@@ -6,7 +6,6 @@
       .review
         .review__title
           = @review.title
-    
         =image_tag @image.image_url, class: "review__image--1"
         %ul.review__image--thumbnails
           -@images.each_with_index do |image, index|
@@ -32,5 +31,14 @@
         人気の記事
       .brand
         ブランド一覧
-
+    =form_for @comment, url: review_comments_url(@review.id), method: :post do |f|
+      =f.text_field :comment, placeholder: 'コメントを入力してください'
+      =f.submit  "コメントを投稿する"
+    -if @comments
+      - @comments.each do |comment|
+        .comment
+          =comment.comment
+        .comment__author
+          Posted by
+          =comment.user.name
   = render partial: "shared/footer"
